@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PYTHONIOENCODING=utf-8 python *)",
+      "Bash(npm create *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npm run *)",
+      "Bash(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\henry\\\\school\\\\topology_mapper\\\\backend\\\\src\\\\main\\\\java\\\\com\\\\topologymapper\\\\config\",)",
+      "Bash(\"C:\\\\Users\\\\henry\\\\school\\\\topology_mapper\\\\backend\\\\src\\\\main\\\\java\\\\com\\\\topologymapper\\\\model\",)",
+      "Bash(\"C:\\\\Users\\\\henry\\\\school\\\\topology_mapper\\\\backend\\\\src\\\\main\\\\java\\\\com\\\\topologymapper\\\\dto\",)",
+      "Bash(\"C:\\\\Users\\\\henry\\\\school\\\\topology_mapper\\\\backend\\\\src\\\\main\\\\java\\\\com\\\\topologymapper\\\\store\",)",
+      "Bash(\"C:\\\\Users\\\\henry\\\\school\\\\topology_mapper\\\\backend\\\\src\\\\main\\\\java\\\\com\\\\topologymapper\\\\service\",)",
+      "Bash(Out-Null)",
+      "PowerShell(Get-ChildItem -Recurse \"C:\\\\Users\\\\henry\\\\school\\\\topology_mapper\\\\backend\" | Where-Object { !$_.PSIsContainer } | Select-Object -ExpandProperty FullName)",
+      "PowerShell(mvn compile *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Get-Process *)",
+      "Bash(.\\\\mvnw.cmd compile *)",
+      "PowerShell(netstat *)",
+      "PowerShell(taskkill *)",
+      "Bash(npm uninstall *)",
+      "Bash(./mvnw.cmd compile *)",
+      "Bash(npx vite *)"
+    ]
+  }
+}

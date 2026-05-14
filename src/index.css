@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --glow-cyan:   0 0 12px rgba(0,217,255,0.5);
+  --glow-purple: 0 0 12px rgba(123,47,255,0.5);
+  --glow-red:    0 0 12px rgba(255,45,85,0.5);
+  --glow-green:  0 0 12px rgba(0,255,156,0.5);
+  --glow-amber:  0 0 12px rgba(255,184,0,0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050D1A;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+/* ---------- Scanline CRT overlay ---------- */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 217, 255, 0.013) 2px,
+    rgba(0, 217, 255, 0.013) 4px
+  );
+}
+
+/* Moving scan line */
+.scanline-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 217, 255, 0.06),
+    transparent
+  );
+  animation: slide-scan 6s linear infinite;
+}
+
+@keyframes slide-scan {
+  0%   { transform: translateY(-2px); }
+  100% { transform: translateY(100vh); }
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #050D1A; }
+::-webkit-scrollbar-thumb { background: #0F2744; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00D9FF33; }
+
+/* ---------- Custom utilities ---------- */
+@layer utilities {
+  .glow-cyan   { box-shadow: var(--glow-cyan); }
+  .glow-purple { box-shadow: var(--glow-purple); }
+  .glow-red    { box-shadow: var(--glow-red); }
+  .glow-green  { box-shadow: var(--glow-green); }
+  .glow-amber  { box-shadow: var(--glow-amber); }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 8px rgba(0,217,255,0.7);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 8px rgba(0,255,156,0.7);
+  }
+  .text-glow-red {
+    text-shadow: 0 0 8px rgba(255,45,85,0.7);
+  }
+}
+
+/* ---------- Input reset ---------- */
+input {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+/* ---------- Framer motion layout ---------- */
+.panel-content {
+  overflow: hidden;
+}
